@@ -33,7 +33,7 @@ namespace CleanArch.Domain.Entities
         private void ValidateDomain(string name, string description, decimal price, int stock, string image)
         {
             DomainExceptionValidation.When(string.IsNullOrEmpty(name),
-                "Invalid name.Name is required");
+                "Invalid name. Name is required");
 
             DomainExceptionValidation.When(name.Length < 3,
                 "Invalid name, too short, minimum 3 charecters is required");
@@ -49,7 +49,10 @@ namespace CleanArch.Domain.Entities
             DomainExceptionValidation.When(stock < 0, "Invalid stock value");
 
             DomainExceptionValidation.When(image.Length > 250,
-                "Invalid image name, too long, maxium 250 characters");
+                "Invalid link image, too long, maxium 250 characters");           
+
+            DomainExceptionValidation.When(string.IsNullOrEmpty(image),
+                "Invalid link image, not is null or empty");
 
             Name = name;
             Description = description;
