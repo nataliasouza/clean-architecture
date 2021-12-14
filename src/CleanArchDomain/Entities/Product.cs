@@ -48,11 +48,8 @@ namespace CleanArch.Domain.Entities
 
             DomainExceptionValidation.When(stock < 0, "Invalid stock value");
 
-            DomainExceptionValidation.When(image.Length > 250,
+            DomainExceptionValidation.When(image?.Length > 250,
                 "Invalid link image, too long, maxium 250 characters");           
-
-            DomainExceptionValidation.When(string.IsNullOrEmpty(image),
-                "Invalid link image, not is null or empty");
 
             Name = name;
             Description = description;
