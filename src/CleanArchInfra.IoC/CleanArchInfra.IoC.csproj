@@ -16,4 +16,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CleanArchDomain\CleanArch.Domain.csproj" />
+    <ProjectReference Include="..\CleanArchInfra\CleanArch.Infra.csproj" />
+  </ItemGroup>
+
 </Project>
